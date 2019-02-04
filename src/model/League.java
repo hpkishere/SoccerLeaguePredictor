@@ -1,7 +1,6 @@
 package target.model;
 
 import java.util.*;
-import java.lang.Thread;
 import target.model.Team;
 
 public class League {
@@ -19,9 +18,13 @@ public class League {
 		this.teams.add(teamToBeAdded);
 	}
 
-	public void insertData (Map<String, Integer> data) throws InterruptedException {
-		System.out.println("\nINSERTING DATA..");
-		Thread.sleep(1000);
+	public ArrayList<Team> getTeams () {
+		Collections.sort(this.teams, (team1, team2) -> team1.compareTo(team2));
+		return this.teams;
+	}
+
+	public void insertData (Map<String, Integer> data) {
+		// System.out.println("\nINSERTING DATA..");
 		for (String name : data.keySet()) {
 			this.addTeam(new Team(name, data.get(name)));
 
@@ -29,13 +32,11 @@ public class League {
 				this.teamNameMaxWidth = name.length();
 			}
 		}
-		System.out.println("\nDATA SUCCESSFULLY INSERTED");
-		Thread.sleep(1000);
+		// System.out.println("\nDATA SUCCESSFULLY INSERTED");
 	}
 
-	public void printTable () throws InterruptedException {
-		System.out.println("\nPRINTING FINAL RESULTS..\n");
-		Thread.sleep(1000);
+	public void printTable () {
+		// System.out.println("\nPRINTING FINAL RESULTS..\n");
 		Collections.sort(this.teams, (team1, team2) -> team1.compareTo(team2));
 		String printFormat = "%-" + (this.teamNameMaxWidth) + "s %2s %2s %2s %2s%n";
 		System.out.printf(printFormat, "Team", "W", "D", "L", "P");
@@ -45,16 +46,14 @@ public class League {
 		});
 	}
 
-	public void startSeason () throws InterruptedException {
-		System.out.println("\nSTARTING SEASON..");
-		Thread.sleep(1000);
+	public void startSeason () {
+		// System.out.println("\nSTARTING SEASON..");
 		this.teams.forEach((team) -> {
 			this.teams.forEach((opponent) -> {
 				if (team.getName().equals(opponent.getName())) return;
 				team.startMatch(opponent);
 			});
 		});
-		System.out.println("\nSEASON IS FINISHED!");
-		Thread.sleep(1000);
+		// System.out.println("\nSEASON IS FINISHED!");
 	}
 }
