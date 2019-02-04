@@ -8,7 +8,7 @@ This application simulates a full soccer league season and prints out the outcom
 execute `./run.sh` in project root directory (Might need to add executable permission)
 
 ##### Windows
-Coming soon!
+execute `./run.bat` in project root directory. I have not tested this yet!
 
 #### WIP
 - Multi-threading
