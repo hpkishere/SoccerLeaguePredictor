@@ -2,7 +2,8 @@ package target.dummy;
 
 import java.util.*;
 
-// Dummy English Premier league data
+// Dummy English Premier league data with 20 teams 
+// and respective team seed from previous year's finished season
 public class EPLData {
 	public static Map<String, Integer> teamData = new HashMap<String, Integer>(){{
     put("Manchester City", 1);

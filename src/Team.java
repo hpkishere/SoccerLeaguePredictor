@@ -2,6 +2,9 @@ package target.model;
 
 import java.lang.Math;
 
+// Team class
+// Each Team object will have its team name, pre-defined seed,
+// number of wins, number of draws, number of losses and points
 public class Team {
 	private String name;
 	private int seed;
@@ -15,6 +18,8 @@ public class Team {
 		this.seed = seed;
 	}
 
+	// GETTERS
+
 	public String getName () {
 		return this.name;
 	}
@@ -27,30 +32,22 @@ public class Team {
 		return this.noOfWin;
 	}
 
-	public void setNoOfWin (int newNoOfWin) {
-		this.noOfWin = newNoOfWin;
-	}
-
 	public int getNoOfDraw () {
 		return this.noOfDraw;
-	}
-
-	public void setNoOfDraw (int newNoOfDraw) {
-		this.noOfDraw = newNoOfDraw;
 	}
 
 	public int getNoOfLoss () {
 		return this.noOfLoss;
 	}
 
-	public void setNoOfLoss (int newNoOfLoss) {
-		this.noOfLoss = newNoOfLoss;
-	}
-
 	public int getNoOfPoint () {
 		return this.noOfPoint;
 	}
 
+	// Calculate number of points acquired by the team.
+	// 1 win = 3 points
+	// 1 draw = 1 point
+	// 1 loss = 0 point
 	public void setNoOfPoint () {
 		this.noOfPoint = 3 * this.noOfWin + this.noOfDraw;
 	}

@@ -4,18 +4,18 @@ import target.model.*;
 import java.util.*;
 import java.util.concurrent.*;
 
-public class StartSeasonRunnable implements Runnable {
+// Runnable class to run matches in a season
+public class MatchesRunnable implements Runnable {
 	private ArrayList<Team> teams;
 	private int lowerCount;
 	private int upperCount;
 
-	public StartSeasonRunnable(ArrayList<Team> teams, int lowerCount, int upperCount) {
+	public MatchesRunnable(ArrayList<Team> teams, int lowerCount, int upperCount) {
 		this.teams = teams;
 		this.lowerCount = lowerCount;
 		this.upperCount = upperCount;
 	}
 
-  // Runnable run() function to play 38 matches for 5 teams each thread
 	@Override
 	public void run() {
     for (int i = lowerCount; i < upperCount; i ++) {

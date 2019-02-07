@@ -1,16 +1,11 @@
 ## Soccer League Predictor
 #### SMU AA Project - Implementing Multi-threading in a Java application
-This application simulates a full soccer league season and prints out the outcome. Currently is running on a single thread.
+This application simulates a full soccer league season N times (N is a variable) and prints out the results and show the probability of each team to win the season. Implemented multi-threading but not performance optimized.
 
 #### How to use
 
 ##### Unix
-execute `./run.sh` in project root directory (Might need to add executable permission)
+execute `./compile.sh` and `./run.sh` in project root directory (Might need to add executable permission)
 
 ##### Windows
-execute `./run.bat` in project root directory. I have not tested this yet!
-
-#### WIP
-- Multi-threading
-- Code refactor
-- Web UI?
+execute `./compile.bat` and `./run.bat` in project root directory.

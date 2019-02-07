@@ -1,10 +1,12 @@
 package target.model;
 
-import java.util.*;
 import target.model.Team;
-import target.thread.StartSeasonRunnable;
+import target.thread.MatchesRunnable;
+import java.util.*;
 import java.util.concurrent.*;
 
+// League class
+// A league contains a set of 20 teams
 public class League {
 	private int size;
 	private String name;
@@ -49,13 +51,13 @@ public class League {
 		});
 	}
 
-	// Start a full 38 matches season
+	// Start a full season
 	public void startSeason () {
 		// Create 4 threads, each thread runs 38 matches for 5 teams
-		Thread t1 = new Thread(new StartSeasonRunnable(this.teams, 0, 5));
-		Thread t2 = new Thread(new StartSeasonRunnable(this.teams, 5, 10));
-		Thread t3 = new Thread(new StartSeasonRunnable(this.teams, 10, 15));
-		Thread t4 = new Thread(new StartSeasonRunnable(this.teams, 15, 20));
+		Thread t1 = new Thread(new MatchesRunnable(this.teams, 0, 5));
+		Thread t2 = new Thread(new MatchesRunnable(this.teams, 5, 10));
+		Thread t3 = new Thread(new MatchesRunnable(this.teams, 10, 15));
+		Thread t4 = new Thread(new MatchesRunnable(this.teams, 15, 20));
 		t1.start();
 		t2.start();
 		t3.start();
