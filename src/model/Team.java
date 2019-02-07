@@ -70,7 +70,7 @@ public class Team {
 		this.setNoOfPoint();
 	}
 
-	public void startMatch (Team opponent) {
+	public synchronized void startMatch (Team opponent) {
 		double randomVal = Math.random();
 
 		if (this.seed < opponent.getSeed()) {
