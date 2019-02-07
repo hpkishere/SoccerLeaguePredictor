@@ -12,9 +12,10 @@ public class Main {
 	public final static int THREAD_NUMBER = 4;
 
 	public static void main (String[] args) {
+		// Start stopwatch
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		HashMap<String, Integer> results = new HashMap<>();
+		// HashMap<String, Integer> results = new HashMap<>();
 	  // ArrayList<Future> futures = new ArrayList<>();
 	 //  ExecutorService exec = Executors.newFixedThreadPool(THREAD_NUMBER);
 
@@ -49,28 +50,29 @@ public class Main {
 			League premierLeague = new League(20, "English Premier League");
 			premierLeague.insertData(EPLData.teamData);
 			premierLeague.startSeason();
-			ArrayList<Team> teams = premierLeague.getTeams();
+			// ArrayList<Team> teams = premierLeague.getTeams();
 
-			Team champion = teams.get(0);
+			// Team champion = teams.get(0);
 
-			if (results.get(champion.getName()) != null) {
-				results.replace(champion.getName(), results.get(champion.getName()) + 1);
-			} else {
-				results.put(champion.getName(), 1);
-			}
+			// if (results.get(champion.getName()) != null) {
+			// 	results.replace(champion.getName(), results.get(champion.getName()) + 1);
+			// } else {
+			// 	results.put(champion.getName(), 1);
+			// }
 		} 
-		int total = 0;
-		for (int championships : results.values()) {
-			total += championships;
-		}
+		// int total = 0;
+		// for (int championships : results.values()) {
+		// 	total += championships;
+		// }
 
-		if (total != LOOP_NUMBER) {
-			System.out.println("TOTAL IN HASHMAP: " + total);
-			System.out.println("SUPPOSED TOTAL: " + LOOP_NUMBER);
-		}
+		// if (total != LOOP_NUMBER) {
+		// 	System.out.println("TOTAL IN HASHMAP: " + total);
+		// 	System.out.println("SUPPOSED TOTAL: " + LOOP_NUMBER);
+		// }
 
-		System.out.println(results);
+		// System.out.println(results);
 
+		// End of application, get timing
 		System.out.println("\nTime elapsed : " + stopWatch.toString());
 	}
 }

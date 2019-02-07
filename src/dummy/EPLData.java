@@ -2,6 +2,7 @@ package target.dummy;
 
 import java.util.*;
 
+// Dummy English Premier league data
 public class EPLData {
 	public static Map<String, Integer> teamData = new HashMap<String, Integer>(){{
     put("Manchester City", 1);

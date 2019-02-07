@@ -55,22 +55,26 @@ public class Team {
 		this.noOfPoint = 3 * this.noOfWin + this.noOfDraw;
 	}
 
-	public void setWin () {
+	// Acquire lock before writing into the Team object
+	public synchronized void setWin () {
 		this.noOfWin++;
 		this.setNoOfPoint();
 	}
 
-	public void setDraw () {
+	// Acquire lock before writing into the Team object
+	public synchronized void setDraw () {
 		this.noOfDraw++;
 		this.setNoOfPoint();
 	}
 
-	public void setLoss () {
+	// Acquire lock before writing into the Team object
+	public synchronized void setLoss () {
 		this.noOfLoss++;
 		this.setNoOfPoint();
 	}
 
-	public synchronized void startMatch (Team opponent) {
+	// Basic algorithm based on team's seed of previous season
+	public void startMatch (Team opponent) {
 		double randomVal = Math.random();
 
 		if (this.seed < opponent.getSeed()) {
